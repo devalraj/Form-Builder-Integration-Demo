@@ -5,27 +5,22 @@ import FormRendererPage from "./pages/FormRenderer"
 import LoginPage from "./pages/Login"
 import RequireUser from "./components/RequireUser"
 import HideLogin from "./components/HideLogin"
-import { useState, useEffect } from "react"
-import checkCurrentUser from "./api/checkCurrentUser"
+import IndexPage from "./pages/Index"
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  useEffect(() => {
-    const init = async () => setIsLoggedIn(await checkCurrentUser());
-    init();
-  }, []);
   return (
     <Router>
-      <NavBar isLoggedIn={isLoggedIn} />
+      <NavBar />
       <div>
         <Routes>
-          <Route element={<HideLogin isLoggedIn={isLoggedIn} />}>
-            <Route path="/" element={<LoginPage />} />
+          <Route element={<HideLogin />}>
+            <Route path="/login" element={<LoginPage />} />
           </Route>
-          <Route element={<RequireUser isLoggedIn={isLoggedIn} />}>
+          <Route element={<RequireUser />}>
+            <Route path="/" element={<IndexPage />} />
             <Route path="/builder" element={<FormBuilderPage />} />
-            <Route path="/builder/:formName" element={<FormBuilderPage />} />
-            <Route path="/renderer" element={<FormRendererPage />} />
+            <Route path="/builder/:formName?" element={<FormBuilderPage />} />
+            <Route path="/renderer/*" element={<FormRendererPage />} />
           </Route>
         </Routes>
       </div>

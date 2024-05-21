@@ -38,24 +38,16 @@ function FormBuilderPage() {
 
     const submitHandler = async () => {
         // For Creating New Form
-        if (newForm) {
-            const flag = await createForm(formJSON);
-            if (flag) {
+        const flag = newForm ? await createForm(formJSON) : await updatedForm(formJSON);
+        if (flag) {
+            if (newForm) {
                 nav(`/builder/${formJSON.name}`);
+                return;
             }
-            else {
-                console.log("Failure Handling");
-            }
+            console.log("Success Handling");
         }
-        // For Updating Form
         else {
-            const flag = await updatedForm(formJSON);
-            if (flag) {
-                console.log("Success Handling");
-            }
-            else {
-                console.log("Failure Handling");
-            }
+            console.log("Failure Handling");
         }
     }
 
@@ -68,20 +60,22 @@ function FormBuilderPage() {
                         <option value="wizard">Wizard</option>
                     </select>
                 </div>
-                {newForm && (
-                    <div>
-                        <label>Title</label>
+                <div>
+                    <label>Title</label>
+                    {newForm ?
                         <input type="text" value={formJSON.title} onChange={(e) => {
                             const value = e.target.value;
                             const formattedValue = value.toLowerCase().replace(/\s/g, '');
                             setFormJSON(prev => ({ ...prev, title: value, name: formattedValue, path: formattedValue }));
                         }} />
-                        <label>Name</label>
-                        <input type="text" value={formJSON.name} disabled />
-                        <label>Path</label>
-                        <input type="text" value={formJSON.path} disabled />
-                    </div>
-                )}
+                        :
+                        <input type="text" value={formJSON.title} disabled />
+                    }
+                    <label>Name</label>
+                    <input type="text" value={formJSON.name} disabled />
+                    <label>Path</label>
+                    <input type="text" value={formJSON.path} disabled />
+                </div>
             </div>
             <FormBuilder form={formJSON} onChange={(schema: JSONObject) => setFormJSON(prev => ({ ...prev, ...schema }))} />
             <div>
