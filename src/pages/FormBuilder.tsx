@@ -6,6 +6,7 @@ import getForm from "../api/getForm";
 import createForm from "../api/createForm";
 import { FORMObject } from "../types/formType";
 import updatedForm from "../api/updateForm";
+import ToggleButton from "../components/prebuilt-formio-components/Toggle.json";
 
 function initialeFormJSONObject() {
     return {
@@ -51,6 +52,18 @@ function FormBuilderPage() {
         }
     }
 
+    const options = {
+        builder: {
+            custom: {
+                title: 'Custom Components',
+                weight: 10,
+                components: {
+                    togglebutton: ToggleButton
+                }
+            }
+        }
+    }
+
     return (
         <>
             <div>
@@ -77,7 +90,7 @@ function FormBuilderPage() {
                     <input type="text" value={formJSON.path} disabled />
                 </div>
             </div>
-            <FormBuilder form={formJSON} onChange={(schema: JSONObject) => setFormJSON(prev => ({ ...prev, ...schema }))} />
+            <FormBuilder form={formJSON} onChange={(schema: JSONObject) => setFormJSON(prev => ({ ...prev, ...schema }))} options={options} />
             <div>
                 <button onClick={submitHandler}>{newForm ? "Create Form" : "Save Form"}</button>
             </div>

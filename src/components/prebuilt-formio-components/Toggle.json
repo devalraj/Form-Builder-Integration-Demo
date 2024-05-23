@@ -1,0 +1,38 @@
+{
+    "title": "Toggle Button",
+    "key": "toggleButton",
+    "icon": "toggle-on",
+    "schema": {
+        "label": "Toggle Button",
+        "tag": "div",
+        "attrs": [
+            {
+                "attr": "",
+                "value": ""
+            }
+        ],
+        "content": "<div\n  style=\"width:125px\"\n  class=\"btn-group btn-block btn-group-toggle border rounded-lg\" \n  data-toggle=\"buttons\">\n  <label class=\"btn btn-light rounded-lg\">\n    <input id={{component.key}}Yes type=\"radio\" > Yes\n  </label>\n  <label class=\"btn btn-light rounded-lg\">\n    <input id={{component.key}}No type=\"radio\" > No\n  </label>\n</div>\n<style>\n  .btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active, .show>.btn-light.dropdown-toggle{\n      color: rgb(0, 70, 255);\n   background: #0046ff0d;\n  }\n</style>",
+        "refreshOnChange": false,
+        "key": "toggleButton",
+        "logic": [
+            {
+                "name": "Appending onchange Logic",
+                "trigger": {
+                    "type": "event",
+                    "event": "render"
+                },
+                "actions": [
+                    {
+                        "name": "Appending onchange Action",
+                        "type": "customAction",
+                        "customAction": "let yesEle = document.getElementById(component.key + \"Yes\");\nlet noEle = document.getElementById(component.key + \"No\");\nif (yesEle !== undefined && yesEle !== null && noEle !== undefined && noEle !== null) {\n  if (yesEle.onchange === undefined || yesEle.onchange === null) {\n    yesEle.onchange = function (e) {\n      if (e.target.checked === true) {\n        data[component.key].value = \"yes\";\n        noEle.checked = false;\n      }\n    };\n  }\n  if (noEle.onchange === undefined || noEle.onchange === null) {\n    noEle.onchange = function (e) {\n      if (e.target.checked === true) {\n        data[component.key].value = \"no\";\n        yesEle.checked = false;\n      }\n    };\n  }\n  if (data[component.key].value !== undefined && data[component.key].value !== null) {\n    if (data[component.key].value == \"yes\") {\n      yesEle.checked = true;\n      yesEle.parentElement.classList.add('active');\n      noEle.checked = false;\n    }\n    else {\n      yesEle.checked = false;\n      noEle.checked = true;\n      noEle.parentElement.classList.add('active');\n    }\n  }\n}",
+                        "content": "<div class=\"well\">Content</div>"
+                    }
+                ]
+            }
+        ],
+        "type": "htmlelement",
+        "input": false,
+        "tableView": false
+    }
+}
