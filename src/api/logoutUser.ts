@@ -1,10 +1,9 @@
-import { axiosLoginEndpointInstance } from "./axios";
-
+import axios from "./axios";
 
 async function logoutUser() {
     let result = false;
     try {
-        const response = await axiosLoginEndpointInstance.get("/logout");
+        const response = await axios.get("/formio/logout");
         if (response.status == 200) {
             result = true;
         }

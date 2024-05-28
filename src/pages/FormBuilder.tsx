@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { JSONObject } from "../types/jsonType";
 import getForm from "../api/getForm";
 import createForm from "../api/createForm";
-import { FORMObject } from "../types/formType";
+import { FORMObject } from "../types/formioTypes";
 import updatedForm from "../api/updateForm";
 import ToggleButton from "../components/prebuilt-formio-components/Toggle.json";
 
