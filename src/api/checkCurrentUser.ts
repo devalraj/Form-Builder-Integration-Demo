@@ -1,9 +1,9 @@
-import {axiosLoginEndpointInstance} from "./axios";
+import axios from "./axios";
 
 async function checkCurrentUser() {
     let result = false;
     try {
-        const response = await axiosLoginEndpointInstance.get("/current");
+        const response = await axios.get("/formio/current");
         if (response.status == 200) {
             result = true;
         }

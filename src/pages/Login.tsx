@@ -2,7 +2,7 @@ import { Form } from "@formio/react";
 import { JSONObject } from "../types/jsonType";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-const baseURL = (import.meta.env.VITE_FORM_BUILDER) ? import.meta.env.VITE_FORM_BUILDER : '';
+import config  from "../config/config";
 
 function LoginPage() {
     const nav = useNavigate();
@@ -10,7 +10,7 @@ function LoginPage() {
     return (
         <>
             <div>
-                <Form src={`${baseURL}/formio/user/login`} onSubmitDone={(data: JSONObject) => {
+                <Form src={`${config.form_builder_url}/formio/user/login`} onSubmitDone={(data: JSONObject) => {
                     if (data["state"] == "submitted") {
                         setIsLoggedIn(true);
                         nav("/");

@@ -1,10 +1,10 @@
 import { FormBuilder } from "@formio/react";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { JSONObject } from "../types/jsonType";
 import getForm from "../api/getForm";
 import createForm from "../api/createForm";
-import { FORMObject } from "../types/formType";
+import { FORMObject } from "../types/formioTypes";
 import updatedForm from "../api/updateForm";
 import ToggleButton from "../components/prebuilt-formio-components/Toggle.json";
 
@@ -88,6 +88,7 @@ function FormBuilderPage() {
                     <input type="text" value={formJSON.name} disabled />
                     <label>Path</label>
                     <input type="text" value={formJSON.path} disabled />
+                    <Link to={`/renderer/${formJSON.path}`}>Preview</Link>
                 </div>
             </div>
             <FormBuilder form={formJSON} onChange={(schema: JSONObject) => setFormJSON(prev => ({ ...prev, ...schema }))} options={options} />

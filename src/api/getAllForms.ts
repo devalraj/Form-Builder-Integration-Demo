@@ -1,10 +1,11 @@
-import { FORMArray, isFORMArray } from "../types/formType";
-import {axios} from "./axios";
+import { projectPath } from "../config/projectPathConfigurator";
+import { FORMArray, isFORMArray } from "../types/formioTypes";
+import axios from "./axios";
 
 async function getAllForms(queryParams: string) {
     let result = [] as FORMArray;
     try {
-        const response = await axios.get(`/form?${queryParams}`);
+        const response = await axios.get(`${projectPath.value}/form?${queryParams}`);
         if (isFORMArray(response.data)) {
             result = response.data;
         }

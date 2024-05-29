@@ -1,10 +1,11 @@
-import { FORMObject, isFORMObject } from "../types/formType";
-import {axios} from "./axios";
+import { projectPath } from "../config/projectPathConfigurator";
+import { FORMObject, isFORMObject } from "../types/formioTypes";
+import axios from "./axios";
 
 async function createForm(data: FORMObject) {
     let created = false;
     try {
-        const response = await axios.post("/form", data);
+        const response = await axios.post(`${projectPath.value}/form`, data);
         if (isFORMObject(response.data) && response.data._id !== undefined) {
             created = true;
         }

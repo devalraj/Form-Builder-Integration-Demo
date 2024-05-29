@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FORMArray } from '../types/formType';
+import { FORMArray } from '../types/formioTypes';
 import { Link } from 'react-router-dom';
 import getAllForms from '../api/getAllForms';
 
@@ -16,7 +16,7 @@ function ViewForms({ itemsPerPage }: { itemsPerPage: number }) {
     }, [itemsPerPage, skip]);
 
     return (
-        <div>
+        <>
             <table>
                 <thead>
                     <tr>
@@ -41,7 +41,7 @@ function ViewForms({ itemsPerPage }: { itemsPerPage: number }) {
                 <button onClick={() => setSkip(prev => prev >= itemsPerPage ? prev - itemsPerPage : 0)}>Previous</button>
                 <button onClick={() => setSkip(prev => prev + itemsPerPage)}>Next</button>
             </div>
-        </div>
+        </>
     );
 }
 
