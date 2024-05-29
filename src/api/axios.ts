@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
     function (axiosConfig) {
-        console.log(axiosConfig.baseURL + "/" + axiosConfig.url);
+        // console.log(axiosConfig.baseURL + "/" + axiosConfig.url);
         axiosConfig.headers['x-jwt-token'] = localStorage.getItem("formioToken") ?? "";
         return axiosConfig;
     }

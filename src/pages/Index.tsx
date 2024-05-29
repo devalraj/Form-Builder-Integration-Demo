@@ -31,7 +31,7 @@ export default function IndexPage() {
                     {projectList.map((item, idx) => <option key={`${idx}-${item._id}`} value={item.name}>{item.title}</option>)}
                 </select>
             </div>
-            <div key={projectPath.value}>
+            <div key={project}>
                 <ViewForms itemsPerPage={5} />
             </div>
         </>
