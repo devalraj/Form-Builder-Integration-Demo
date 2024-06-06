@@ -4,9 +4,11 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { JSONObject } from "../types/jsonType";
 import getForm from "../api/getForm";
 import createForm from "../api/createForm";
-import { FORMObject } from "../types/formioTypes";
+import { Builder, FORMObject } from "../types/formioTypes";
 import updatedForm from "../api/updateForm";
 import ToggleButton from "../components/prebuilt-formio-components/Toggle.json";
+import Forms from "../components/prebuilt-formio-components/Forms.json";
+// import getAllForms from "../api/getAllForms";
 
 function initialeFormJSONObject() {
     return {
@@ -19,11 +21,27 @@ function initialeFormJSONObject() {
     } as FORMObject;
 }
 
+function initialOptionsObject() {
+    const temp: Builder = {
+        builder: {
+            custom: {
+                title: "Custom Components",
+                weight: 10,
+                components: {
+                    togglebutton: ToggleButton
+                }
+            }
+        }
+    };
+    return temp;
+}
+
 function FormBuilderPage() {
     const params = useParams();
     const nav = useNavigate();
     const newForm = params["formName"] === undefined;
     const [formJSON, setFormJSON] = useState<FORMObject>(initialeFormJSONObject());
+    const [options, setOptions] = useState<Builder>(initialOptionsObject());
 
     // At Page initialization
     useEffect(() => {
@@ -52,23 +70,62 @@ function FormBuilderPage() {
         }
     }
 
-    const options = {
-        builder: {
-            custom: {
-                title: 'Custom Components',
-                weight: 10,
-                components: {
-                    togglebutton: ToggleButton
+    const formHandler = (formType: string) => {
+
+        // async function init() {
+        //     const response = await getAllForms('type=form');
+        //     const temp = {};
+        //     response.forEach(form => {
+        //         temp[form.name] = {
+        //             title: form.title,
+        //             key: form.name,
+        //             schema: {
+        //                 components: form.components
+        //             }
+        //         };
+        //     });
+        //     setOptions(prev => ({
+        //         ...prev,
+        //         builder: {
+        //             forms: {
+        //                 title: "Prebuilt Forms",
+        //                 weight: 10,
+        //                 components: temp
+        //             }
+        //         }
+        //     }));
+        // }
+        // init();
+
+        const updatedOptions: Builder = formType === "wizard" ?
+            {
+                builder: {
+                    basic: false,
+                    custom: false,
+                    advanced: false,
+                    layout: false,
+                    data: false,
+                    premium: false,
+                    forms: {
+                        title: "Prebuilt Forms",
+                        weight: 10,
+                        components: {
+                            login: Forms
+
+                        }
+                    }
                 }
-            }
-        }
+            } :
+            initialOptionsObject();
+        setOptions(updatedOptions);
+        setFormJSON(prev => ({ ...prev, display: formType }))
     }
 
     return (
         <>
             <div>
                 <div>
-                    <select value={formJSON.display} onChange={(e) => setFormJSON(prev => ({ ...prev, display: e.target.value }))}>
+                    <select value={formJSON.display} onChange={(e) => formHandler(e.target.value)}>
                         <option value="form">Form</option>
                         <option value="wizard">Wizard</option>
                     </select>
@@ -88,10 +145,10 @@ function FormBuilderPage() {
                     <input type="text" value={formJSON.name} disabled />
                     <label>Path</label>
                     <input type="text" value={formJSON.path} disabled />
-                    <Link to={`/renderer/${formJSON.path}`}>Preview</Link>
+                    {!newForm && <Link to={`/renderer/${formJSON.path}`}>Preview</Link>}
                 </div>
             </div>
-            <FormBuilder form={formJSON} onChange={(schema: JSONObject) => setFormJSON(prev => ({ ...prev, ...schema }))} options={options} />
+            <FormBuilder key={formJSON.display} form={formJSON} onChange={(schema: JSONObject) => setFormJSON(prev => ({ ...prev, ...schema }))} options={options} />
             <div>
                 <button onClick={submitHandler}>{newForm ? "Create Form" : "Save Form"}</button>
             </div>
