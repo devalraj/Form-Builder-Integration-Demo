@@ -4,6 +4,7 @@ import config from "../config/config";
 import { projectPath } from "../config/projectPathConfigurator";
 import { PROJECTArray } from "../types/formioTypes";
 import getAllProjects from "../api/getAllProjects";
+import { Link } from "react-router-dom";
 
 export default function IndexPage() {
     const [project, setProject] = useState<string>(projectPath.value);
@@ -30,6 +31,8 @@ export default function IndexPage() {
                 <select value={project} onChange={(e) => setProject(e.target.value)}>
                     {projectList.map((item, idx) => <option key={`${idx}-${item._id}`} value={item.name}>{item.title}</option>)}
                 </select>
+                &nbsp;&nbsp;
+                <Link to={`/builder`}>New Form</Link>
             </div>
             <div key={project}>
                 <ViewForms itemsPerPage={5} />

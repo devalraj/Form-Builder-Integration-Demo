@@ -1,0 +1,37 @@
+{
+    "title": "Forms",
+    "key": "loginForm",
+    "icon": "file-waveform",
+    "schema": {
+        "components": [
+            {
+                "type": "email",
+                "placeholder": "Enter your email address",
+                "key": "email",
+                "lockKey": true,
+                "label": "Email",
+                "tableView": true,
+                "input": true
+            },
+            {
+                "type": "password",
+                "protected": true,
+                "placeholder": "Enter your password.",
+                "key": "password",
+                "lockKey": true,
+                "label": "Password",
+                "inputType": "password",
+                "tableView": false,
+                "input": true
+            },
+            {
+                "type": "button",
+                "disableOnInvalid": true,
+                "key": "submit",
+                "tableView": false,
+                "label": "Submit",
+                "input": true
+            }
+        ]
+    }
+}
