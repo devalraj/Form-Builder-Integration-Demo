@@ -1,0 +1,32 @@
+{
+    "Party": {
+        "Addr": {
+            "AddrTypeCd": "MailingAddress",
+            "Addr1": "Weteringpad 2",
+            "DetailAddr": {
+                "StreetName": "Weteringpad",
+                "StreetNumber": "2",
+                "UnitNumber": "123"
+            },
+            "City": "Woerden",
+            "PostalCode": "3585 AB",
+            "CountryCd": {
+                "Value": "NL"
+            },
+            "Country": "EN_Nederland"
+        },
+        "Communications": {
+            "CommunicationUseCd": "Home",
+            "PhoneTypeCd": "Phone",
+            "PhoneNumber": "+31-12-3456789",
+            "EmailAddr": "John.Doe@example.com"
+        },
+        "TitlePrefix": "1",
+        "SurnamePrefix": "S",
+        "Surname": "Aguirre",
+        "PreferredName": "Kyle",
+        "GenderCd": "M",
+        "BirthDt": "1950-12-13",
+        "MaritalStatusCd": "U"
+    }
+}

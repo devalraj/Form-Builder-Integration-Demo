@@ -1,4 +1,5 @@
 import { Formio } from "formiojs";
+import dataModel from "./swagger/dataModel.json"
 
 function findComponents(components, target) {
     for (let i = 0; i < components.length; i++) {
@@ -6,6 +7,18 @@ function findComponents(components, target) {
             return components[i];
     }
     return undefined;
+}
+
+function getKeys(jsonData, prefix = '') {
+    let keys = [];
+    for (let key in jsonData) {
+        if (typeof jsonData[key] === 'object') {
+            keys = keys.concat(getKeys(jsonData[key], prefix + key + '.'));
+        } else {
+            keys.push(prefix + key);
+        }
+    }
+    return keys;
 }
 
 for (let comp in Formio.Components.components) {
@@ -25,11 +38,16 @@ for (let comp in Formio.Components.components) {
         api.components = [
             {
                 "weight": 0,
-                "type": "textfield",
+                "type": "select",
                 "input": true,
                 "key": "keySetter",
                 "label": "Key Setter",
+                "dataSrc": "json",
+                "dataType": "string",
                 "tooltip": "This is used for setting up the Property Name",
+                "data": {
+                    "json": getKeys(dataModel)
+                },
                 "calculateValue": "instance.parent.getComponent(\"key\").setValue(value);"
             },
             ...api.components
