@@ -54,7 +54,7 @@ export interface FORMObject {
     key?: string;
 }
 
-export interface CustomComponentObject{
+export interface CustomComponentObject {
     title: string;
     weight: number;
     components: { [key: string]: CustomComponent; };
@@ -74,6 +74,8 @@ export interface PROJECTObject {
 export interface PROJECTArray extends Array<PROJECTObject> { }
 
 export interface Builder {
+    alwaysConfirmComponentRemoval?: boolean;
+    noDefaultSubmitButton?: boolean;
     builder: {
         custom?: boolean | CustomComponentObject;
         basic?: boolean;

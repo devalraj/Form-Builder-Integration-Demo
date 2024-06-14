@@ -8,7 +8,6 @@ import { Builder, FORMObject } from "../types/formioTypes";
 import updatedForm from "../api/updateForm";
 import ToggleButton from "../components/prebuilt-formio-components/Toggle.json";
 import Forms from "../components/prebuilt-formio-components/Forms.json";
-// import getAllForms from "../api/getAllForms";
 
 function initialeFormJSONObject() {
     return {
@@ -23,6 +22,8 @@ function initialeFormJSONObject() {
 
 function initialOptionsObject() {
     const temp: Builder = {
+        alwaysConfirmComponentRemoval: true,
+        noDefaultSubmitButton: true,
         builder: {
             custom: {
                 title: "Custom Components",
