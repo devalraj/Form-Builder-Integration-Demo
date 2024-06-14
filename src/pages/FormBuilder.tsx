@@ -26,7 +26,7 @@ function initialOptionsObject() {
         noDefaultSubmitButton: true,
         builder: {
             custom: {
-                title: "Custom Components",
+                title: "Pre-defined Fields",
                 weight: 10,
                 components: {
                     togglebutton: ToggleButton
@@ -53,8 +53,7 @@ function FormBuilderPage() {
         if (params["formName"] != undefined) {
             init(params["formName"]);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    });
 
     const submitHandler = async () => {
         // For Creating New Form
@@ -108,7 +107,7 @@ function FormBuilderPage() {
                     data: false,
                     premium: false,
                     forms: {
-                        title: "Prebuilt Forms",
+                        title: "Pre-built Forms",
                         weight: 10,
                         components: {
                             login: Forms
