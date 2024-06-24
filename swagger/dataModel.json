@@ -28,5 +28,621 @@
         "GenderCd": "M",
         "BirthDt": "1950-12-13",
         "MaritalStatusCd": "U"
+    },
+    "Policy": {
+        "ItemIdInfo": {
+            "InsurerId": {
+                "Value": "RCPLA"
+            },
+            "Property": {
+                "Key": "rubriek1",
+                "Value": "Freerubric on main policylevel (Eigen risico kind)",
+                "SystemRef": "LVL"
+            }
+        },
+        "LOBCd": "PRSL",
+        "ContractTerm": {
+            "ExpirationDt": "2023-01-01",
+            "DurationPeriod": {
+                "NumUnits": "12"
+            }
+        },
+        "RateEffectiveDt": "2022-01-01",
+        "RenewalTerm": {
+            "ExpirationDt": "2023-01-01"
+        },
+        "PaymentOption": {
+            "BillingPeriod": {
+                "DurationPeriod": {
+                    "NumUnits": "0"
+                }
+            }
+        },
+        "AdditionalInterest": {
+            "Relationship": {
+                "RelationshipToCd": "REF"
+            },
+            "PartyNumber": "0"
+        },
+        "MinPremAmt": {
+            "Amt": "0.00",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "UnderwritingDecisionInfo": {
+            "UnderwritingScoreNumber": "0",
+            "ObjectAcceptanceInd": "true",
+            "ObjectAcceptanceNum": "0",
+            "PersonAcceptanceInd": "false",
+            "PersonAcceptanceNum": "0"
+        },
+        "OriginalPolicyInceptionDt": "2022-01-01",
+        "LeadInsurerName": "Roundcube private lines A",
+        "HazardGradeInfo": {
+            "HazardGradeCd": {
+                "Value": "UNK"
+            },
+            "HazardGradeOverrideCd": {
+                "Value": "UNK"
+            },
+            "HazardGradeCategoryCd": {
+                "Value": "UNK"
+            }
+        },
+        "Producer": {
+            "PartyNumber": "0"
+        },
+        "PersLiabilityLineBusiness": {
+            "HazardGradeInfo": {
+                "HazardGradeCd": {
+                    "Value": "UNK"
+                },
+                "HazardGradeOverrideCd": {
+                    "Value": "UNK"
+                },
+                "HazardGradeCategoryCd": {
+                    "Value": "UNK"
+                }
+            },
+            "ItemIdInfo": {
+                "VersionNumber": "0",
+                "Property": {
+                    "Key": "rubriek1",
+                    "Value": "Free rubric on Object level (Name of the Insured)",
+                    "SystemRef": "LVL"
+                }
+            },
+            "Coverage": {
+                "_DivergentProcessCd": "0",
+                "IterationNumber": "0",
+                "CoverageDesc": "Aansprakelijkheidsverzekering Particulier",
+                "Limit": {
+                    "FormatInteger": "100",
+                    "LimitAppliesToCd": "EXCES"
+                },
+                "ExtCoverageCode": {
+                    "Value": "600",
+                    "_Desc": "Aansprakelijkheidsverzekering Particulier"
+                },
+                "ExtCoverageTypeCd": "AP1-WA",
+                "SequenceNumber": "1",
+                "PaymentPlanSurchargeAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "PaymentPlanSurchargePct": "0.00",
+                "CorrectionPremiumAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "DepositPremiumAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "DepositPremiumAllowedInd": "0",
+                "GrossPremiumAmt": {
+                    "Amt": "2.93",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "GrossPremiumAnnAmt": {
+                    "Amt": "2.93",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "InclExtraCoverageInd": "0",
+                "NetAmt": {
+                    "Amt": "2.93",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "PremiumPml": {
+                    "Value": "0.00000"
+                },
+                "ExtraPremiumPrm": {
+                    "Value": "0.00000"
+                },
+                "PremiumShareFirstInsuredAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "CommercialDiscountAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "DiscountAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "DiscountPct": "0.00",
+                "DiscountUNPct": "0.00",
+                "IntermediateDiscAmt": {
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "IntermediateBMDiscAmt": {
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "TaxAmt": {
+                    "Amt": "0.58",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "TaxFeeTypeCd": {
+                    "Value": "0"
+                },
+                "TaxMedVarPct": "0.00",
+                "TaxRateAmt": {
+                    "Amt": "0.0000",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "NumPool": "0",
+                "PoolNum": "0",
+                "RegionCd": {
+                    "Value": "0"
+                },
+                "InsuredAmt": {
+                    "Amt": "0",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "BonusMalus": {
+                    "CalculateBmInd": "0",
+                    "CorrectionBmDiscountAmt": {
+                        "Amt": "0.00",
+                        "CurCd": {
+                            "Value": "EUR"
+                        }
+                    }
+                },
+                "Commission": {
+                    "CommissionRatePct": "0.00",
+                    "CommissionAmt": {
+                        "Amt": "0.56",
+                        "CurCd": {
+                            "Value": "EUR"
+                        }
+                    },
+                    "ProducerRoleCd": "Coverholder",
+                    "ContinuesInd": "true"
+                },
+                "ExtraCommission": {
+                    "CommissionRatePct": "0.00",
+                    "CommissionAmt": {
+                        "Amt": "0.00",
+                        "CurCd": {
+                            "Value": "EUR"
+                        }
+                    },
+                    "ProducerRoleCd": "PROD"
+                },
+                "ProcessingCode": {
+                    "ExternalCd": {
+                        "Value": "001"
+                    }
+                },
+                "StandardCode": {
+                    "Value": "6001",
+                    "_CodeListRef": "ADNDEK",
+                    "_SourceSystemRef": "AFD"
+                },
+                "Clause": {
+                    "ItemIdInfo": {
+                        "VersionNumber": "0"
+                    },
+                    "ClauseNumber": "100",
+                    "ClauseRef": "102",
+                    "Title": "Terrorisme",
+                    "ClauseText": "Clausuleblad terrorismedekking\nBij de Nederlandese herverzekeringsmaatschappij oor\nTerrorismeschaden N.V. (NHT)",
+                    "AffiliationCd": {
+                        "Value": "H"
+                    },
+                    "ExtCoverageCd": {
+                        "Value": "1"
+                    },
+                    "SequenceNum": "1"
+                },
+                "Condition": {
+                    "ItemIdInfo": {
+                        "VersionNumber": "0"
+                    },
+                    "ConditionNumber": "3",
+                    "ConditionRef": "1",
+                    "Title": "Algemene voorwaarden Aansprakelijkheidsverzekering voor",
+                    "URL": "http://www.vmd.nl/files/downloads/GHA_AVP_0210.pdf",
+                    "AffiliationCd": {
+                        "Value": "H"
+                    },
+                    "ExtCoverageCd": {
+                        "Value": "1"
+                    },
+                    "SequenceNum": "1"
+                }
+            },
+            "CoverageAvailable": {
+                "_DivergentProcessCd": "0",
+                "IterationNumber": "0",
+                "CoverageDesc": "Aansprakelijkheidsverzekering Particulier",
+                "Limit": {
+                    "FormatInteger": "100",
+                    "LimitAppliesToCd": "EXCES"
+                },
+                "ExtCoverageCode": {
+                    "Value": "600",
+                    "_Desc": "Aansprakelijkheidsverzekering Particulier"
+                },
+                "ExtCoverageTypeCd": "AP1-WA",
+                "SequenceNumber": "1",
+                "PaymentPlanSurchargeAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "PaymentPlanSurchargePct": "0.00",
+                "CorrectionPremiumAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "DepositPremiumAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "DepositPremiumAllowedInd": "0",
+                "GrossPremiumAmt": {
+                    "Amt": "2.93",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "GrossPremiumAnnAmt": {
+                    "Amt": "2.93",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "InclExtraCoverageInd": "0",
+                "NetAmt": {
+                    "Amt": "2.93",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "PremiumPml": {
+                    "Value": "0.00000"
+                },
+                "ExtraPremiumPrm": {
+                    "Value": "0.00000"
+                },
+                "PremiumShareFirstInsuredAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "CommercialDiscountAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "DiscountAmt": {
+                    "Amt": "0.00",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "DiscountPct": "0.00",
+                "DiscountUNPct": "0.00",
+                "IntermediateDiscAmt": {
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "IntermediateBMDiscAmt": {
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "TaxAmt": {
+                    "Amt": "0.58",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "TaxFeeTypeCd": {
+                    "Value": "0"
+                },
+                "TaxMedVarPct": "0.00",
+                "TaxRateAmt": {
+                    "Amt": "0.0000",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "NumPool": "0",
+                "PoolNum": "0",
+                "RegionCd": {
+                    "Value": "0"
+                },
+                "InsuredAmt": {
+                    "Amt": "0",
+                    "CurCd": {
+                        "Value": "EUR"
+                    }
+                },
+                "BonusMalus": {
+                    "CalculateBmInd": "0",
+                    "CorrectionBmDiscountAmt": {
+                        "Amt": "0.00",
+                        "CurCd": {
+                            "Value": "EUR"
+                        }
+                    }
+                },
+                "Commission": {
+                    "CommissionRatePct": "0.00",
+                    "CommissionAmt": {
+                        "Amt": "0.56",
+                        "CurCd": {
+                            "Value": "EUR"
+                        }
+                    },
+                    "ProducerRoleCd": "Coverholder",
+                    "ContinuesInd": "true"
+                },
+                "ExtraCommission": {
+                    "CommissionRatePct": "0.00",
+                    "CommissionAmt": {
+                        "Amt": "0.00",
+                        "CurCd": {
+                            "Value": "EUR"
+                        }
+                    },
+                    "ProducerRoleCd": "PROD"
+                },
+                "ProcessingCode": {
+                    "ExternalCd": {
+                        "Value": "001"
+                    }
+                },
+                "StandardCode": {
+                    "Value": "6001",
+                    "_CodeListRef": "ADNDEK",
+                    "_SourceSystemRef": "AFD"
+                },
+                "Clause": {
+                    "ItemIdInfo": {
+                        "VersionNumber": "0"
+                    },
+                    "ClauseNumber": "100",
+                    "ClauseRef": "102",
+                    "Title": "Terrorisme",
+                    "ClauseText": "Clausuleblad terrorismedekking\nBij de Nederlandese herverzekeringsmaatschappij oor\nTerrorismeschaden N.V. (NHT)",
+                    "AffiliationCd": {
+                        "Value": "H"
+                    },
+                    "ExtCoverageCd": {
+                        "Value": "1"
+                    },
+                    "SequenceNum": "1"
+                },
+                "Condition": {
+                    "ItemIdInfo": {
+                        "VersionNumber": "0"
+                    },
+                    "ConditionNumber": "3",
+                    "ConditionRef": "1",
+                    "Title": "Algemene voorwaarden Aansprakelijkheidsverzekering voor",
+                    "URL": "http://www.vmd.nl/files/downloads/GHA_AVP_0210.pdf",
+                    "AffiliationCd": {
+                        "Value": "H"
+                    },
+                    "ExtCoverageCd": {
+                        "Value": "1"
+                    },
+                    "SequenceNum": "1"
+                }
+            },
+            "Liability": {
+                "LiabilityInfo": {
+                    "AnimalBabysitterInd": "true",
+                    "BabysitterInd": "true",
+                    "DIYInd": "true",
+                    "EndAgeChildren": "18",
+                    "FamilyCompositionCd": {
+                        "Value": "11"
+                    },
+                    "HomeOwnerInd": "true",
+                    "HunterInd": "true",
+                    "InsuredAmt": {
+                        "Amt": "1250000",
+                        "CurCd": {
+                            "Value": "EUR"
+                        }
+                    },
+                    "NumAnimals": "2",
+                    "NumHunters": "2",
+                    "NumProperties": "0",
+                    "PropertyRentalInd": "true",
+                    "RateCodePli": {
+                        "Value": "21"
+                    },
+                    "ReplCostAmt": {
+                        "Amt": "0",
+                        "CurCd": {
+                            "Value": "EUR"
+                        }
+                    },
+                    "VolExtraExcessAmt": {
+                        "Amt": "500",
+                        "CurCd": {
+                            "Value": "EUR"
+                        }
+                    }
+                }
+            }
+        },
+        "AutomaticCancellationInd": "0",
+        "Characteristic": "1.250.000",
+        "CommercialProduct": {
+            "Value": "411",
+            "_Desc": "Aansprakelijkheidsverzekering RCPLA 411"
+        },
+        "CollectivityNumber": "0",
+        "ExchangeCd": {
+            "Value": "0"
+        },
+        "InsuredAmt": {
+            "Amt": "1250000",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "PoolNum": "2",
+        "PolicyCd": "STD",
+        "ProductCd": {
+            "Value": "101",
+            "_Desc": "Aansprakelijkheid particulier"
+        },
+        "SubProductCd": {
+            "Value": "61"
+        },
+        "ProductGroup": "Aansprakelijkheid particulieren",
+        "EndorsementDt": "2022-01-01",
+        "ChangeReason": "1000",
+        "GrossPremiumAmt": {
+            "Amt": "2.78",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "GrossPremiumInclBMAmt": {
+            "Amt": "2.93",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "PremiumWithoutTaxAmt": {
+            "Amt": "0.00",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "RenewalPremiumAmt": {
+            "Amt": "3.36",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "RenewalPremiumAnnualAmt": {
+            "Amt": "3.36",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "RenPremiumExclWithoutTaxAmt": {
+            "Amt": "2.78",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "RenPremiumExclPkgDiscountAmt": {
+            "Amt": "3.55",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "ReservedPremiumAmt": {
+            "Amt": "0.00",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "ExcessPolicyLevelInd": "0",
+        "DiscountAmt": {
+            "Amt": "0.00",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "PkgDiscountAmt": {
+            "Amt": "0.15",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "PkgDiscountPct": "5.00",
+        "AdjustPaymentPlanSurchargeInd": "1",
+        "TaxAmt": {
+            "Amt": "0.58",
+            "CurCd": {
+                "Value": "EUR"
+            }
+        },
+        "Commission": {
+            "CommissionRatePct": "0.00",
+            "CommissionAmt": {
+                "Amt": "0.00",
+                "CurCd": {
+                    "Value": "EUR"
+                }
+            },
+            "ProducerRoleCd": "Coverholder",
+            "ContinuesInd": "false"
+        },
+        "ProcessingCode": {
+            "ProcessingCd": {
+                "Value": "1000"
+            },
+            "RecalculateInd": "1"
+        }
     }
 }
